@@ -1,0 +1,121 @@
+/* Start Variables  */
+:root {
+  --main-color: #03a9f4
+}
+/* End Variables  */
+/* Start Global Rules  */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Small  */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* Large  */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+/* End Global Rules  */
+/* Start Header  */
+header {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .logo {
+  color: white;
+  font-size: 35px;
+  font-weight: 600;
+  letter-spacing: 1.3px;
+}
+header .header-list {
+  display: inline-flex;
+  gap: 20px;
+}
+header .header-list li a {
+  color: white;
+  transition: .3s;
+  font-size: 17px;
+}
+header .header-list li a:hover {
+  color: var(--main-color);
+}
+/* End Header  */
+/* Start Landing  */
+.landing {
+  min-height: 100vh;
+  background-image: url(/images/pexels-adonyi-gábor-1414651.jpg);
+  background-size: cover;
+  position: relative;
+  z-index: -1;
+}
+.landing .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.landing .text-intro {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.landing .text-intro h1 {
+  color: white;
+  font-size: 35px;
+}
+.landing .text-intro h1 .intro-style {
+  color: var(--main-color);
+}
+.landing .text-intro p {
+  color: white;
+  line-height: 1.5;
+  font-size: 20px;
+}
+
+/* End Landing  */
