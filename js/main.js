@@ -43,6 +43,16 @@ colorsList.forEach(item => {
 // Set Yes Or No Background Auto Selected
 let bgSelectAuto = true
 let interval;
+// Set Background Local Storage 
+let bgLocalStorage = localStorage.getItem('bglocal')
+
+if (bgLocalStorage !== null) {
+  if (bgLocalStorage === "true") {
+    bgSelectAuto = true
+  } else {
+    bgSelectAuto = false
+  }
+}
 //----------------------------------------
 // Switch Background Auto Select
 const bgBtn = document.querySelectorAll('.auto-bg button')
@@ -73,9 +83,11 @@ bgBtn.forEach(item => {
     if (eo.target.dataset.bg == 'yes') {
       bgSelectAuto = true
       selectImage()
+      localStorage.setItem('bglocal', true)
     } else if(eo.target.dataset.bg == 'no') {
       bgSelectAuto = false
       clearInterval(interval)
+      localStorage.setItem('bglocal', false)
     }
   })
 });
@@ -90,8 +102,6 @@ img3 = `url(/images/3.jpg)`;
 img4 = `url(/images/4.jpg)`;
 let arrImages = [img1, img2, img3, img4];
 
-
-
 function selectImage() {
   if (bgSelectAuto === true) {
     interval = setInterval(() => {
@@ -102,7 +112,7 @@ function selectImage() {
       } else {
         index = 0
       }
-    }, 10000);
+    }, 2000);
   }
 }
 selectImage();
