@@ -1,9 +1,18 @@
+// Custom Gear Settings 
+let btnGear = document.querySelector('.toggle-setting .fa-gear')
+let settingsBox = document.querySelector('.setting-box') 
+console.log(btnGear);
+btnGear.addEventListener('click', (eo) => {
+  settingsBox.classList.toggle('open')
+  btnGear.classList.toggle('spin')
+})
+//-------------------------------------------
 // Change Background Image
 {
-let land = document.querySelector(".landing");
+let landingPage = document.querySelector(".landing");
 
 index = 0;
-function randomImage() {
+function selectImage() {
   img1 = `url(/images/1.jpg)`;
   img2 = `url(/images/2.jpg)`;
   img3 = `url(/images/3.jpg)`;
@@ -12,13 +21,14 @@ function randomImage() {
 
   setInterval(() => {
     if (index < arrImages.length) {
-      land.style.backgroundImage = arrImages[index];
-      land.style.transition = '1.3s'
+      landingPage.style.backgroundImage = arrImages[index];
+      landingPage.style.transition = '1.3s'
       index++
     } else {
       index = 0
     }
-  }, 4000);
+  }, 10000);
 }
-randomImage();
+selectImage();
 }
+//-------------------------------------------

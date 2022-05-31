@@ -48,6 +48,42 @@ a {
   }
 }
 /* End Global Rules  */
+/* Start Settings Box */
+.setting-box {
+  position: fixed;
+  left: -200px;
+  top: 0;
+  background-color: white;
+  width: 200px;
+  min-height: 100vh;
+  transition: .3s;
+}
+.setting-box.open {
+  left: 0;
+}
+.setting-box .toggle-setting {
+  position: absolute;
+  right: -30px;
+  top: 90px;
+  background-color: white;
+  border-radius: 0 5px 5px 0;
+  text-align: center;
+  cursor: pointer;
+}
+.setting-box .fa-gear {
+  width: 30px;
+  padding: 5px 0;
+}
+.setting-box .fa-gear.spin {
+  animation: gear 1.5s infinite linear;
+}
+/* Animation Gear  */
+@keyframes gear {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* End Settings Box */
 /* Start Header  */
 header {
   position: absolute;
@@ -109,7 +145,7 @@ header .header-list li a:hover {
   color: white;
   font-size: 35px;
 }
-.landing .text-intro h1 .intro-style {
+.color-style {
   color: var(--main-color);
 }
 .landing .text-intro p {
