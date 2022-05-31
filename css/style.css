@@ -1,6 +1,6 @@
 /* Start Variables  */
 :root {
-  --main-color: #03a9f4
+  --main-color: #03a9f4;
 }
 /* End Variables  */
 /* Start Global Rules  */
@@ -15,7 +15,7 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 ul {
   list-style: none;
@@ -56,7 +56,7 @@ a {
   background-color: white;
   width: 200px;
   min-height: 100vh;
-  transition: .3s;
+  transition: 0.3s;
   z-index: 1000;
 }
 .setting-box.open {
@@ -92,6 +92,7 @@ a {
   background-color: #eee;
   border-radius: 10px 0 10px 0;
 }
+/* Edit Colors  */
 .setting-box .option h4 {
   color: #666;
 }
@@ -106,7 +107,7 @@ a {
   background-color: black;
   border-radius: 50%;
   cursor: pointer;
-  opacity: .5;
+  opacity: 0.5;
   margin-left: 5px;
   border: 3px solid #eee;
 }
@@ -128,6 +129,25 @@ a {
 }
 .setting-box .option .colors-list li:last-child {
   background-color: #ff5722;
+}
+/* Edit Auto Background  */
+.setting-box .option .yes,
+.setting-box .option .no {
+  all: unset;
+  width: 30px;
+  background-color: var(--main-color);
+  display: inline-block;
+  color: white;
+  font-weight: bold;
+  padding: 3px 8px;
+  margin: 20px 3px 0;
+  border-radius: 5px;
+  cursor: pointer;
+  opacity: .5;
+  transition: .3s;
+}
+.setting-box .auto-bg button.active {
+  opacity: 1;
 }
 /* End Settings Box */
 /* Start Header  */
@@ -157,7 +177,7 @@ header .header-list {
 }
 header .header-list li a {
   color: white;
-  transition: .3s;
+  transition: 0.3s;
   font-size: 17px;
 }
 header .header-list li a:hover {

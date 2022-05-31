@@ -17,7 +17,7 @@ if (mainColors !== null) {
   document.documentElement.style.setProperty('--main-color', mainColors)
   // Set Active Class on Local Storage
     // Remove Active From All Chlidern
-    document.querySelectorAll('.colors-list li').forEach(e => {
+    colorsList.forEach(e => {
       e.classList.remove('active')
       // Add Active Class
       if (e.dataset.color === mainColors) {
@@ -25,13 +25,12 @@ if (mainColors !== null) {
       }
     })
 }
-
 colorsList.forEach(item => {
   item.addEventListener('click', (eo) => {
     document.documentElement.style.setProperty('--main-color', eo.target.dataset.color)
     // Set Color On Local
     localStorage.setItem('colorLocal', eo.target.dataset.color)
-
+    
     // Remove Active From All Chlidern
     eo.target.parentElement.querySelectorAll('.active').forEach(e => {
       e.classList.remove('active')
@@ -41,26 +40,71 @@ colorsList.forEach(item => {
   })
 });
 //-------------------------------------------
+// Set Yes Or No Background Auto Selected
+let bgSelectAuto = true
+let interval;
+//----------------------------------------
+// Switch Background Auto Select
+const bgBtn = document.querySelectorAll('.auto-bg button')
+// Local Storage Colors
+let  activeBg = localStorage.getItem('activeBg')
+if (activeBg !== null) {
+  // Set Active Class on Local Storage
+    // Remove Active From All Chlidern
+    bgBtn.forEach(e => {
+      e.classList.remove('active')
+      // Add Active Class
+      if (e.dataset.bg === activeBg) {
+        e.classList.add('active')
+      }
+    })
+}
+
+bgBtn.forEach(item => {
+  item.addEventListener('click', (eo) => {
+    localStorage.setItem('activeBg', eo.target.dataset.bg)
+    // Remove Active From All Chlidern
+    eo.target.parentElement.querySelectorAll('.active').forEach(e => {
+      e.classList.remove('active')
+    })
+    // Add Active Class
+    eo.target.classList.add('active')
+    // Remove Auto Background Selected 
+    if (eo.target.dataset.bg == 'yes') {
+      bgSelectAuto = true
+      selectImage()
+    } else if(eo.target.dataset.bg == 'no') {
+      bgSelectAuto = false
+      clearInterval(interval)
+    }
+  })
+});
+//-------------------------------------------
 // Change Background Image
 let landingPage = document.querySelector(".landing");
 
 index = 0;
-function selectImage() {
-  img1 = `url(/images/1.jpg)`;
-  img2 = `url(/images/2.jpg)`;
-  img3 = `url(/images/3.jpg)`;
-  img4 = `url(/images/4.jpg)`;
-  let arrImages = [img1, img2, img3, img4];
+img1 = `url(/images/1.jpg)`;
+img2 = `url(/images/2.jpg)`;
+img3 = `url(/images/3.jpg)`;
+img4 = `url(/images/4.jpg)`;
+let arrImages = [img1, img2, img3, img4];
 
-  setInterval(() => {
-    if (index < arrImages.length) {
-      landingPage.style.backgroundImage = arrImages[index];
-      landingPage.style.transition = '1.3s'
-      index++
-    } else {
-      index = 0
-    }
-  }, 10000);
+
+
+function selectImage() {
+  if (bgSelectAuto === true) {
+    interval = setInterval(() => {
+      if (index < arrImages.length) {
+        landingPage.style.backgroundImage = arrImages[index];
+        landingPage.style.transition = '1.3s'
+        index++
+      } else {
+        index = 0
+      }
+    }, 10000);
+  }
 }
 selectImage();
 //-------------------------------------------
+console.log(bgSelectAuto);
