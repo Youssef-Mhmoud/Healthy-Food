@@ -1,14 +1,47 @@
 // Custom Gear Settings 
 let btnGear = document.querySelector('.toggle-setting .fa-gear')
 let settingsBox = document.querySelector('.setting-box') 
-console.log(btnGear);
+
 btnGear.addEventListener('click', (eo) => {
   settingsBox.classList.toggle('open')
   btnGear.classList.toggle('spin')
 })
 //-------------------------------------------
+// Switch Colors 
+const colorsList = document.querySelectorAll('.colors-list li')
+
+// Local Storage Colors
+let mainColors = localStorage.getItem('colorLocal')
+let activeColor = localStorage.getItem('activeColor')
+if (mainColors !== null) {
+  document.documentElement.style.setProperty('--main-color', mainColors)
+  // Set Active Class on Local Storage
+    // Remove Active From All Chlidern
+    document.querySelectorAll('.colors-list li').forEach(e => {
+      e.classList.remove('active')
+      // Add Active Class
+      if (e.dataset.color === mainColors) {
+        e.classList.add('active')
+      }
+    })
+}
+
+colorsList.forEach(item => {
+  item.addEventListener('click', (eo) => {
+    document.documentElement.style.setProperty('--main-color', eo.target.dataset.color)
+    // Set Color On Local
+    localStorage.setItem('colorLocal', eo.target.dataset.color)
+
+    // Remove Active From All Chlidern
+    eo.target.parentElement.querySelectorAll('.active').forEach(e => {
+      e.classList.remove('active')
+    })
+    // Add Active Class
+    eo.target.classList.add('active')
+  })
+});
+//-------------------------------------------
 // Change Background Image
-{
 let landingPage = document.querySelector(".landing");
 
 index = 0;
@@ -30,5 +63,4 @@ function selectImage() {
   }, 10000);
 }
 selectImage();
-}
 //-------------------------------------------
