@@ -53,7 +53,7 @@ a {
 .main-title {
   border: 2px solid;
   width: fit-content;
-  margin: 0 auto 10px;
+  margin: 0 auto 80px;
   padding: 10px 20px;
   text-transform: uppercase;
   color: var(--main-color);
@@ -63,7 +63,7 @@ a {
 }
 .name-delay {
   color: white;
-  border: 2px solid white;
+  border: 2px solid var(--main-color);
   transition-delay: 1.3s;
 }
 .animation-title::after,
@@ -80,7 +80,7 @@ a {
 }
 .animation-title::after {
   right: -50px;
-  animation: right-side 1.5s forwards ;
+  animation: right-side 1.5s forwards;
 }
 .animation-title::before {
   left: -50px;
@@ -293,5 +293,47 @@ header .header-list li a:hover {
   padding-top: var(--main-padding);
   padding-bottom: var(--main-padding);
 }
-
+.about-section .info-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.about-section .info-box  .info-parag {
+  max-width: 600px;
+  font-size: 20px;
+  line-height: 1.4;
+  font-weight: 600;
+}
+.about-section .image-about {
+  position: relative;
+}
+.about-section .image-about::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: 1s;
+}
+.about-section .image-width::after {
+  width: 100%;
+}
+.about-section .image-about p {
+  position: absolute;
+  top: 50%;
+  left: 2%;
+  color: black;
+  line-height: 1.6;
+  font-size: 45px;
+  font-weight: bold;
+  transform: translateY(-50%);
+  z-index: 100;
+  opacity: 0;
+  transition: 1s;
+}
+.about-section .image-about p.op {
+  opacity: 1;
+}
 /* End About Us  */

@@ -121,10 +121,22 @@ function selectImage() {
 selectImage();
 //-------------------------------------------
 // Start About Animation Title
+// 1- Animation One Title
 let mainTitle = document.querySelector('.main-title')
 window.addEventListener('scroll', (eo) => {
-  if (window.scrollY >= 250) {
+  if (window.scrollY >= 350) {
     mainTitle.classList.add('animation-title', 'name-delay')
+  }
+})
+// 2- Animation Two Img
+let imgBox = document.querySelector('.image-about')
+let paragraph = document.querySelector('.image-about p')
+
+window.addEventListener('scroll', (eo) => {
+  if (window.scrollY >= 550) {
+    imgBox.classList.add('image-width')
+    paragraph.classList.add('op')
+    paragraph.style.color = 'var(--main-color)'
   }
 })
 //-------------------------------------------
