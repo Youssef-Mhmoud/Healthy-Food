@@ -121,11 +121,14 @@ function selectImage() {
 selectImage();
 //-------------------------------------------
 // Start About Animation Title
+this.addEventListener('scroll', (eo) => {
+  console.log(this.scrollY);
+})
 // 1- Animation One Title
-let mainTitle = document.querySelector('.main-title')
+let mainTitleAbout = document.querySelector('#about .main-title')
 window.addEventListener('scroll', (eo) => {
-  if (window.scrollY >= 350) {
-    mainTitle.classList.add('animation-title', 'name-delay')
+  if (window.scrollY >= 450) {
+    mainTitleAbout.classList.add('animation-title', 'name-delay')
   }
 })
 // 2- Animation Two Img
@@ -137,6 +140,13 @@ window.addEventListener('scroll', (eo) => {
     imgBox.classList.add('image-width')
     paragraph.classList.add('op')
     paragraph.style.color = 'var(--main-color)'
+  }
+})
+// Gallery Section
+let mainTitleGa = document.querySelector('#gallery .main-title')
+window.addEventListener('scroll', (eo) => {
+  if (window.scrollY >= 900) {
+    mainTitleGa.classList.add('animation-title', 'name-delay')
   }
 })
 //-------------------------------------------
