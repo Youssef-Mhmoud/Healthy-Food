@@ -1,4 +1,4 @@
-// Custom Gear Settings
+// Start Custom Gear Settings
 let btnGear = document.querySelector(".toggle-setting .fa-gear");
 let settingsBox = document.querySelector(".setting-box");
 
@@ -7,7 +7,7 @@ btnGear.addEventListener("click", (eo) => {
   btnGear.classList.toggle("spin");
 });
 //-------------------------------------------
-// Switch Colors
+// Start Switch Colors
 const colorsList = document.querySelectorAll(".colors-list li");
 
 // Local Storage Colors And Acitve Class
@@ -57,7 +57,7 @@ if (bgLocalStorage !== null) {
   }
 }
 //----------------------------------------
-// Switch Background Auto Select
+// Start Switch Background Auto Select
 const bgBtn = document.querySelectorAll(".auto-bg button");
 // Local Storage Colors
 let activeBg = localStorage.getItem("activeBg");
@@ -95,7 +95,7 @@ bgBtn.forEach((item) => {
   });
 });
 //-------------------------------------------
-// Change Background Image
+// Start Change Background Image
 let landingPage = document.querySelector(".landing");
 
 index = 0;
@@ -119,4 +119,12 @@ function selectImage() {
   }
 }
 selectImage();
+//-------------------------------------------
+// Start About Animation Title
+let mainTitle = document.querySelector('.main-title')
+window.addEventListener('scroll', (eo) => {
+  if (window.scrollY >= 250) {
+    mainTitle.classList.add('animation-title', 'name-delay')
+  }
+})
 //-------------------------------------------

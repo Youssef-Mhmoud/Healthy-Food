@@ -1,6 +1,7 @@
 /* Start Variables  */
 :root {
   --main-color: #03a9f4;
+  --main-padding: 100px;
 }
 /* End Variables  */
 /* Start Global Rules  */
@@ -48,6 +49,71 @@ a {
   }
 }
 /* End Global Rules  */
+/* Start Compontent  */
+.main-title {
+  border: 2px solid;
+  width: fit-content;
+  margin: 0 auto 10px;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  color: var(--main-color);
+  position: relative;
+  z-index: 200;
+  transition: 0.3s;
+}
+.name-delay {
+  color: white;
+  border: 2px solid white;
+  transition-delay: 1.3s;
+}
+.animation-title::after,
+.animation-title::before {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: var(--main-color);
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  z-index: -1;
+}
+.animation-title::after {
+  right: -50px;
+  animation: right-side 1.5s forwards ;
+}
+.animation-title::before {
+  left: -50px;
+  animation: left-side 1.5s forwards;
+}
+/* Animation About Us  */
+@keyframes right-side {
+  50% {
+    right: 0;
+    width: 12px;
+    height: 12px;
+  }
+  100% {
+    right: 0;
+    width: 50%;
+    height: 101%;
+    border-radius: 0;
+  }
+}
+@keyframes left-side {
+  50% {
+    left: 0;
+    width: 12px;
+    height: 12px;
+  }
+  100% {
+    left: 0;
+    width: 51%;
+    height: 101%;
+    border-radius: 0;
+  }
+}
+/* End Compontent  */
 /* Start Settings Box */
 .setting-box {
   position: fixed;
@@ -143,8 +209,8 @@ a {
   margin: 20px 3px 0;
   border-radius: 5px;
   cursor: pointer;
-  opacity: .5;
-  transition: .3s;
+  opacity: 0.5;
+  transition: 0.3s;
 }
 .setting-box .auto-bg button.active {
   opacity: 1;
@@ -221,5 +287,11 @@ header .header-list li a:hover {
   line-height: 1.5;
   font-size: 20px;
 }
-
 /* End Landing  */
+/* Start About Us  */
+.about-section {
+  padding-top: var(--main-padding);
+  padding-bottom: var(--main-padding);
+}
+
+/* End About Us  */
