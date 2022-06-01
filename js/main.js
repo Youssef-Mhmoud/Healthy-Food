@@ -120,18 +120,18 @@ function selectImage() {
 }
 selectImage();
 //-------------------------------------------
-// Start About Animation Title
-this.addEventListener('scroll', (eo) => {
-  console.log(this.scrollY);
-})
-// 1- Animation One Title
+// Start Animation Title
+// this.addEventListener('scroll', (eo) => {
+//   console.log(this.scrollY);
+// })
+// 1- Animation About Section One Title
 let mainTitleAbout = document.querySelector('#about .main-title')
 window.addEventListener('scroll', (eo) => {
   if (window.scrollY >= 450) {
     mainTitleAbout.classList.add('animation-title', 'name-delay')
   }
 })
-// 2- Animation Two Img
+// 2- Animation About Section Two Img
 let imgBox = document.querySelector('.image-about')
 let paragraph = document.querySelector('.image-about p')
 

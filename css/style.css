@@ -300,23 +300,33 @@ header .header-list li a:hover {
 }
 .about-section .info-box {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+
 }
 .about-section .info-box  .info-parag {
   max-width: 600px;
   font-size: 20px;
-  line-height: 1.4;
+  line-height: 2.5;
   font-weight: 600;
+  background-color: var(--main-color);
+  width: 6000px;
+  color: white;
+  height: 298px;
+  padding: 30px;
+  border-radius: 50px 0 0 0;
 }
 .about-section .image-about {
   position: relative;
+  
+}
+.about-section .image-about img {
+  width: 450px;
+  border-bottom-right-radius: 50px;
 }
 .about-section .image-about::after {
   content: '';
   position: absolute;
   width: 0%;
-  height: 100%;
+  height: 298px;
   left: 0;
   top: 0;
   background-color: rgba(0, 0, 0, 0.7);
@@ -326,11 +336,12 @@ header .header-list li a:hover {
 }
 .about-section .image-width::after {
   width: 100%;
+  border-bottom-right-radius: 50px;
 }
 .about-section .image-about p {
   position: absolute;
   top: 50%;
-  left: 2%;
+  left: 10%;
   color: black;
   line-height: 1.6;
   font-size: 45px;
