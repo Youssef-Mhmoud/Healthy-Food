@@ -297,7 +297,21 @@ header .header-list li a:hover {
 .about-section {
   padding-top: var(--main-padding);
   padding-bottom: var(--main-padding);
+  background-color: #eee;
+  /* position: relative; */
 }
+/* .about-section::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: var(--main-color);
+  z-index: -3;
+  opacity: .4;
+  transition: .5s;
+} */
 .about-section .info-box {
   display: flex;
 
@@ -313,6 +327,7 @@ header .header-list li a:hover {
   height: 298px;
   padding: 30px;
   border-radius: 50px 0 0 0;
+  transition: .3s;
 }
 .about-section .image-about {
   position: relative;
@@ -332,7 +347,6 @@ header .header-list li a:hover {
   background-color: rgba(0, 0, 0, 0.7);
   transition: 1s;
   transition-delay: .8s;
-
 }
 .about-section .image-width::after {
   width: 100%;
