@@ -152,8 +152,15 @@ window.addEventListener('scroll', (eo) => {
 // Features Section
 let mainTitleFeatures = document.querySelector('#features .main-title')
 window.addEventListener('scroll', (eo) => {
-  if (window.scrollY >= 1600) {
+  if (window.scrollY >= 2100) {
     mainTitleFeatures.classList.add('animation-title', 'name-delay')
+  }
+})
+// Testimonials Section 
+let mainTitletesti = document.querySelector('#testimonials .main-title')
+window.addEventListener('scroll', (eo) => {
+  if (window.scrollY >= 2600) {
+    mainTitletesti.classList.add('animation-title', 'name-delay')
   }
 })
 //-------------------------------------------
