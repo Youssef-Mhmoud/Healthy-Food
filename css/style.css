@@ -448,3 +448,9 @@ header .header-list li a:hover {
   transform: rotate(180deg);
 }
 /* End Gallery  */
+/* Start Features  */
+.features-section {
+  padding-top: var(--main-padding) ;
+  padding-bottom: var(--main-padding);
+}
+/* End Features  */

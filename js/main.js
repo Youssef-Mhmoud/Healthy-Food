@@ -149,6 +149,13 @@ window.addEventListener('scroll', (eo) => {
     mainTitleGa.classList.add('animation-title', 'name-delay')
   }
 })
+// Features Section
+let mainTitleFeatures = document.querySelector('#features .main-title')
+window.addEventListener('scroll', (eo) => {
+  if (window.scrollY >= 1600) {
+    mainTitleFeatures.classList.add('animation-title', 'name-delay')
+  }
+})
 //-------------------------------------------
 // Start Gallery Img PopUp
 let imagePop = document.querySelectorAll('.gallery-box img')
@@ -197,3 +204,4 @@ document.addEventListener('click', (eo) => {
     document.querySelector('.popup').remove()
   }
 })
+//-------------------------------------------
