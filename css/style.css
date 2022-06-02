@@ -246,10 +246,22 @@ header .header-list {
   display: inline-flex;
   gap: 20px;
 }
+header .header-list li {
+  animation: links 0.7s linear backwards;
+  animation-delay: calc(.6s * var(--i));
+}
+/* Animation Links Header  */
+@keyframes links {
+  0% {
+    transform: translateY(-100px) scale(1) rotate(-45deg);
+  }
+}
 header .header-list li a {
   color: white;
   transition: 0.3s;
   font-size: 17px;
+  animation: fade 1s;
+  animation-delay: .5s;
 }
 header .header-list li a:hover {
   color: var(--main-color);
@@ -282,6 +294,8 @@ header .header-list li a:hover {
 .landing .text-intro h1 {
   color: white;
   font-size: 35px;
+  animation: fade 1s;
+  animation-delay:.6s;
 }
 .color-style {
   transition: 0.3s;
@@ -291,7 +305,20 @@ header .header-list li a:hover {
   color: white;
   line-height: 1.5;
   font-size: 20px;
+  /* animation: fade 1s linear backwards;
+  animation-delay: .6s; */
 }
+/* Animation H1 And P  */
+/* @keyframes fade {
+  0% {
+    transform: translateY(-150px) scale(0) rotate(-45deg);
+    transform-origin: left;
+  }
+  100% {
+    transform: translateY(0px) scale(1) rotate(0);
+    transform-origin: left;
+  }
+} */
 /* End Landing  */
 /* Start About Us  */
 .about-section {
@@ -452,5 +479,6 @@ header .header-list li a:hover {
 .features-section {
   padding-top: var(--main-padding) ;
   padding-bottom: var(--main-padding);
+  background-color: #eee;
 }
 /* End Features  */
