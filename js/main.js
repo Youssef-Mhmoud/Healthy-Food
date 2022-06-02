@@ -187,3 +187,13 @@ imagePop.forEach(item => {
     }
   })
 })
+// Close The Popup
+document.addEventListener('click', (eo) => {
+  if (eo.target.className == 'fa-solid fa-xmark') {
+    // Remove Popup
+    eo.target.parentElement.remove()
+
+    // Remove Overlay
+    document.querySelector('.popup').remove()
+  }
+})

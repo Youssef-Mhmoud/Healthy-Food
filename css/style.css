@@ -69,7 +69,7 @@ a {
 .name-delay {
   color: white;
   border: 2px solid var(--main-color);
-  transition-delay: .5s;
+  transition-delay: 0.5s;
 }
 .animation-title::after,
 .animation-title::before {
@@ -85,11 +85,11 @@ a {
 }
 .animation-title::after {
   right: -50px;
-  animation: right-side .8s forwards;
+  animation: right-side 0.8s forwards;
 }
 .animation-title::before {
   left: -50px;
-  animation: left-side .8s forwards;
+  animation: left-side 0.8s forwards;
 }
 /* Animation About Us  */
 @keyframes right-side {
@@ -314,9 +314,8 @@ header .header-list li a:hover {
 } */
 .about-section .info-box {
   display: flex;
-
 }
-.about-section .info-box  .info-parag {
+.about-section .info-box .info-parag {
   max-width: 600px;
   font-size: 20px;
   line-height: 2.5;
@@ -327,18 +326,17 @@ header .header-list li a:hover {
   height: 298px;
   padding: 30px;
   border-radius: 50px 0 0 0;
-  transition: .3s;
+  transition: 0.3s;
 }
 .about-section .image-about {
   position: relative;
-  
 }
 .about-section .image-about img {
   width: 450px;
   border-bottom-right-radius: 50px;
 }
 .about-section .image-about::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 0%;
   height: 298px;
@@ -346,7 +344,7 @@ header .header-list li a:hover {
   top: 0;
   background-color: rgba(0, 0, 0, 0.7);
   transition: 1s;
-  transition-delay: .8s;
+  transition-delay: 0.8s;
 }
 .about-section .image-width::after {
   width: 100%;
@@ -364,7 +362,7 @@ header .header-list li a:hover {
   z-index: 100;
   opacity: 0;
   transition: 1s;
-  transition-delay: .8s;
+  transition-delay: 0.8s;
 }
 .about-section .image-about p.op {
   opacity: 1;
@@ -387,6 +385,7 @@ header .header-list li a:hover {
   margin: 5px;
   cursor: pointer;
 }
+/* Popup Image  */
 .popup {
   position: fixed;
   background-color: rgb(0 0 0 / 70%);
@@ -400,12 +399,22 @@ header .header-list li a:hover {
   position: fixed;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(1);
   z-index: 100000;
   padding: 20px;
   background-color: #fff;
   border: 1px solid #eee;
   border-radius: 5px;
+  animation: popup .4s;
+}
+@keyframes popup {
+  0%,
+  100% {
+  transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+  transform: translate(-50%, -50%) scale(1.1);
+  }
 }
 .popup-box img {
   width: 600px;
@@ -415,5 +424,27 @@ header .header-list li a:hover {
 .popup-box h3 {
   text-align: center;
   margin-bottom: 20px;
+  font-weight: bold;
+  color: var(--main-color);
+}
+.popup-box i {
+  font-size: 30px;
+  position: absolute;
+  right: -13px;
+  top: -26px;
+  background-color: var(--main-color);
+  border: 5px solid white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s;
+  color: white;
+}
+.popup-box i:hover {
+  transform: rotate(180deg);
 }
 /* End Gallery  */
