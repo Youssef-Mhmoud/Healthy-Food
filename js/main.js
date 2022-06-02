@@ -150,3 +150,40 @@ window.addEventListener('scroll', (eo) => {
   }
 })
 //-------------------------------------------
+// Start Gallery Img PopUp
+let imagePop = document.querySelectorAll('.gallery-box img')
+
+imagePop.forEach(item => {
+  item.addEventListener('click', (eo) => {
+    // Create Overlay Element
+    let overlay = document.createElement('div')
+    overlay.setAttribute('class', 'popup')
+    document.body.appendChild(overlay)
+    
+    // Create Popup Box
+    let popBox = document.createElement('div')
+    popBox.className = "popup-box"
+
+    // Create Image 
+    let popImage = document.createElement('img')
+    popImage.src = item.src
+    // Add Image To PopUp Box
+    popBox.appendChild(popImage)
+
+    // Add PopBox To Body
+    document.body.appendChild(popBox)
+
+    if (item.alt !== null) {
+      let imgHeading = document.createElement('h3')
+      let imgText = document.createTextNode(item.alt)
+      imgHeading.appendChild(imgText)
+      // Append The Heading To Popup Box 
+      popBox.prepend(imgHeading)
+
+      // Create Close Span
+      let closeBtn = document.createElement('i')
+      closeBtn.className = 'fa-solid fa-xmark'
+      popBox.prepend(closeBtn)
+    }
+  })
+})
