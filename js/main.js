@@ -127,7 +127,7 @@ selectImage();
 // 1- Animation About Section One Title
 let mainTitleAbout = document.querySelector('#about .main-title')
 window.addEventListener('scroll', (eo) => {
-  if (window.scrollY >= 450) {
+  if (window.scrollY >= 550) {
     mainTitleAbout.classList.add('animation-title', 'name-delay')
   }
 })
@@ -136,7 +136,7 @@ let imgBox = document.querySelector('.image-about')
 let paragraph = document.querySelector('.image-about p')
 
 window.addEventListener('scroll', (eo) => {
-  if (window.scrollY >= 550) {
+  if (window.scrollY >= 610) {
     imgBox.classList.add('image-width')
     paragraph.classList.add('op')
     paragraph.style.color = 'var(--main-color)'
@@ -145,7 +145,7 @@ window.addEventListener('scroll', (eo) => {
 // Gallery Section
 let mainTitleGa = document.querySelector('#gallery .main-title')
 window.addEventListener('scroll', (eo) => {
-  if (window.scrollY >= 900) {
+  if (window.scrollY >= 1300) {
     mainTitleGa.classList.add('animation-title', 'name-delay')
   }
 })
