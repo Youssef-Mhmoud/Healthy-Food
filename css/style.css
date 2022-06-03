@@ -711,3 +711,10 @@ header .header-list li a:hover {
   color: white;
 }
 /* End Contact  */
+/* Start Footer  */
+footer {
+  background-color: var(--main-color);
+  padding: 20px;
+  color: white;
+}
+/* End Footer  */
