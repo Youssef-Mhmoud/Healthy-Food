@@ -49,6 +49,41 @@ a {
   }
 }
 /* End Global Rules  */
+/* Scroll To Top  */
+.scroll {
+  position: fixed;
+  bottom: 25px;
+  right: -100px;
+  background-color: var(--main-color);
+  padding: 6px 9px;
+  border-radius: 4px;
+  opacity: 0;
+  transition: .5s;
+  z-index: 2000;
+  font-size: 20px;
+  cursor: pointer;
+}
+.scroll::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: .3s;
+  z-index: -100;
+}
+.scroll:hover::after {
+  width: 100%;
+}
+.scroll a {
+  color: white;
+}
+.show {
+  right: 20px;
+  opacity: 1;
+}
 /* Identification To This Website  */
 ::selection {
   background-color: var(--main-color);
@@ -592,3 +627,10 @@ header .header-list li a:hover {
   line-height: 1.6;
 }
 /* End Testimonials */
+/* Start Contact  */
+.contact-section {
+  padding-top: var(--main-padding);
+  padding-bottom: var(--main-padding);
+  background-color: #eee;
+}
+/* End Contact  */

@@ -124,6 +124,15 @@ selectImage();
 // this.addEventListener('scroll', (eo) => {
 //   console.log(this.scrollY);
 // })
+// Add Scroll To Top 
+let scrollToTop = document.querySelector('.scroll')
+window.addEventListener('scroll', (eo) => {
+  if (window.scrollY >= 500) {
+    scrollToTop.classList.add('show')
+  } else {
+    scrollToTop.classList.remove('show')
+  }
+})
 // 1- Animation About Section One Title
 let mainTitleAbout = document.querySelector('#about .main-title')
 window.addEventListener('scroll', (eo) => {
@@ -159,8 +168,15 @@ window.addEventListener('scroll', (eo) => {
 // Testimonials Section 
 let mainTitletesti = document.querySelector('#testimonials .main-title')
 window.addEventListener('scroll', (eo) => {
-  if (window.scrollY >= 2600) {
+  if (window.scrollY >= 3000) {
     mainTitletesti.classList.add('animation-title', 'name-delay')
+  }
+})
+// Contact Us Section 
+let mainTitleContact = document.querySelector('#contact .main-title')
+window.addEventListener('scroll', (eo) => {
+  if (window.scrollY >= 4000) {
+    mainTitleContact.classList.add('animation-title', 'name-delay')
   }
 })
 //-------------------------------------------
