@@ -181,7 +181,7 @@ window.addEventListener('scroll', (eo) => {
 // Contact Us Section 
 let mainTitleContact = document.querySelector('#contact .main-title')
 window.addEventListener('scroll', (eo) => {
-  if (window.scrollY >= 4000) {
+  if (window.scrollY >= 3900) {
     mainTitleContact.classList.add('animation-title', 'name-delay')
   }
 })
@@ -234,3 +234,5 @@ document.addEventListener('click', (eo) => {
   }
 })
 //-------------------------------------------
+
+
