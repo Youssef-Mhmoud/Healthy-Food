@@ -133,6 +133,12 @@ window.addEventListener('scroll', (eo) => {
     scrollToTop.classList.remove('show')
   }
 })
+scrollToTop.onclick = eo => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  })
+}
 // 1- Animation About Section One Title
 let mainTitleAbout = document.querySelector('#about .main-title')
 window.addEventListener('scroll', (eo) => {

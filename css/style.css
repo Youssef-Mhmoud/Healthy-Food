@@ -62,6 +62,7 @@ a {
   z-index: 2000;
   font-size: 20px;
   cursor: pointer;
+  color: white;
 }
 .scroll::after {
   content: "";
@@ -76,9 +77,6 @@ a {
 }
 .scroll:hover::after {
   width: 100%;
-}
-.scroll a {
-  color: white;
 }
 .show {
   right: 20px;
@@ -137,7 +135,7 @@ a {
   100% {
     right: 0;
     width: 50%;
-    height: 101%;
+    height: 102%;
     border-radius: 0;
   }
 }
@@ -150,7 +148,7 @@ a {
   100% {
     left: 0;
     width: 51%;
-    height: 101%;
+    height: 102%;
     border-radius: 0;
   }
 }
