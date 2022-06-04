@@ -178,6 +178,14 @@ window.addEventListener('scroll', (eo) => {
     mainTitletesti.classList.add('animation-title', 'name-delay')
   }
 })
+let testBox = document.querySelectorAll('.test-box')
+window.addEventListener('scroll', (eo) => {
+  if (window.scrollY >= 3000) {
+    testBox.forEach(item => {
+      item.classList.add('show-testi-box')
+    });
+  }
+})
 // Contact Us Section 
 let mainTitleContact = document.querySelector('#contact .main-title')
 window.addEventListener('scroll', (eo) => {
