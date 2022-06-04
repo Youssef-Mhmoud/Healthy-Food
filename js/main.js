@@ -6,6 +6,11 @@ btnGear.addEventListener("click", (eo) => {
   settingsBox.classList.toggle("open");
   btnGear.classList.toggle("spin");
 });
+// Reset Button
+document.querySelector('.reset-op').addEventListener('click', eo => {
+  localStorage.clear()
+  window.location.reload()
+})
 //-------------------------------------------
 // Make Function Handle With Active Class
 function handleActive(e) {
@@ -16,6 +21,7 @@ function handleActive(e) {
       // Add Active Class
       e.target.classList.add("active");
 }
+// -------------------------------------------
 // Start Switch Colors
 const colorsList = document.querySelectorAll(".colors-list li");
 
@@ -48,7 +54,7 @@ colorsList.forEach((item) => {
 });
 });
 
-//-------------------------------------------
+// -------------------------------------------
 // Set Yes Or No Background Auto Selected
 let bgSelectAuto = true;
 let interval;

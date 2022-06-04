@@ -254,6 +254,22 @@ a {
 .setting-box .auto-bg button.active {
   opacity: 1;
 }
+/* Button Reset  */
+.op-reset button {
+  background-color: var(--main-color);
+  padding: 6px 9px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 15px;
+  cursor: pointer;
+  transition: .3s;
+}
+.op-reset button:hover {
+  opacity: .8;
+}
 /* End Settings Box */
 /* Start Header  */
 header {
