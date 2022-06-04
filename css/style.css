@@ -512,6 +512,7 @@ header .header-list li a:hover {
   padding-top: var(--main-padding);
   padding-bottom: 50px;
   background-color: #eee;
+  position: relative;
 }
 .features-section .container {
   display: grid;
@@ -724,5 +725,6 @@ footer {
   background-color: rgba(0, 0, 0, 0.719);
   padding: 20px;
   color: white;
+  text-align: center;
 }
 /* End Footer  */

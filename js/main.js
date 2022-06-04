@@ -242,5 +242,8 @@ document.addEventListener('click', (eo) => {
   }
 })
 //-------------------------------------------
-
-
+// Add Paragraph To Footer
+let footer = document.querySelector('footer')
+let year = new Date()
+footer.innerHTML = `<p>CopyRights © ${year.getFullYear()}</p>`
+//-------------------------------------------
