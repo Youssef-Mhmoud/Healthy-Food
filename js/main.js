@@ -7,6 +7,15 @@ btnGear.addEventListener("click", (eo) => {
   btnGear.classList.toggle("spin");
 });
 //-------------------------------------------
+// Make Function Handle With Active Class
+function handleActive(e) {
+      // Remove Active From All Chlidern
+      e.target.parentElement.querySelectorAll(".active").forEach(item => {
+        item.classList.remove("active");
+      });
+      // Add Active Class
+      e.target.classList.add("active");
+}
 // Start Switch Colors
 const colorsList = document.querySelectorAll(".colors-list li");
 
@@ -35,13 +44,10 @@ colorsList.forEach((item) => {
     localStorage.setItem("colorLocal", eo.target.dataset.color);
 
     // Remove Active From All Chlidern
-    eo.target.parentElement.querySelectorAll(".active").forEach((e) => {
-      e.classList.remove("active");
-    });
-    // Add Active Class
-    eo.target.classList.add("active");
-  });
+    handleActive(eo)
 });
+});
+
 //-------------------------------------------
 // Set Yes Or No Background Auto Selected
 let bgSelectAuto = true;
@@ -77,9 +83,7 @@ bgBtn.forEach((item) => {
   item.addEventListener("click", (eo) => {
     localStorage.setItem("activeBg", eo.target.dataset.bg);
     // Remove Active From All Chlidern
-    eo.target.parentElement.querySelectorAll(".active").forEach((e) => {
-      e.classList.remove("active");
-    });
+    handleActive(eo)
     // Add Active Class
     eo.target.classList.add("active");
     // Remove Auto Background Selected
@@ -169,6 +173,12 @@ let mainTitleFeatures = document.querySelector('#features .main-title')
 window.addEventListener('scroll', (eo) => {
   if (window.scrollY >= 2100) {
     mainTitleFeatures.classList.add('animation-title', 'name-delay')
+  }
+})
+let middleFeat = document.querySelector('.middle-feat')
+window.addEventListener('scroll', (eo) => {
+  if (window.scrollY >= 2100) {
+    middleFeat.style.boxShadow = "1px 1px 20px 3px #00000020"
   }
 })
 // Testimonials Section 
