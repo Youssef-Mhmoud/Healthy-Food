@@ -419,6 +419,15 @@ header .header-list li a:hover {
     transform-origin: left;
   }
 } */
+/* Start Responsive Landing  */
+@media (max-width: 767px) {
+  .landing .text-intro h1 {
+    font-size: 30px;
+  }
+  .landing .text-intro p {
+    font-size: 15x;
+  }
+}
 /* End Landing  */
 /* Start About Us  */
 .about-section {
@@ -445,7 +454,7 @@ header .header-list li a:hover {
 .about-section .info-box .info-parag {
   max-width: 600px;
   font-size: 20px;
-  line-height: 2.5;
+  line-height: 2;
   font-weight: 600;
   background-color: var(--main-color);
   width: 6000px;
@@ -493,6 +502,27 @@ header .header-list li a:hover {
 }
 .about-section .image-about p.op {
   opacity: 1;
+}
+/* Start Responsive About Us  */
+@media (max-width: 991px) {
+  .about-section .info-box {
+    flex-wrap: wrap;
+  }
+  .about-section .image-about img {
+    width: 600px;
+    height: 298px;
+  }
+}
+@media (max-width: 650px) {
+  .about-section .image-about img {
+    width: 100%;
+  }
+  .about-section .info-box {
+    overflow: hidden;
+  }
+  .about-section .info-box .info-parag {
+    padding: 20px;
+  }
 }
 /* End About Us  */
 /* Start Gallery  */
@@ -573,6 +603,19 @@ header .header-list li a:hover {
 }
 .popup-box i:hover {
   transform: rotate(180deg);
+}
+/* Start Responsive PopUp  */
+@media (max-width: 680px) {
+  .popup-box img {
+    width: 500px;
+    height: 300px;
+  }
+}
+@media (max-width: 580px) {
+  .popup-box img {
+    width: 300px;
+    height: 200px;
+  }
 }
 /* End Gallery  */
 /* Start Features  */
@@ -658,6 +701,17 @@ header .header-list li a:hover {
 .features-section .feat-box:nth-child(7) {
   grid-column: 1 / 5;
   grid-row: 4 / 5;
+}
+/* Strat Responsive Features   */
+@media (max-width: 767px) {
+    .features-section .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+  }
+  .features-section .middle-feat {
+    margin-bottom: 0;
+  }
 }
 /* End Features  */
 /* Start Testimonials */
@@ -792,6 +846,19 @@ header .header-list li a:hover {
 .contact-section form .sub-btn:hover {
   background-color: var(--main-color);
   color: white;
+}
+/* Start Responsive Contact  */
+@media (max-width: 992px) {
+  .contact-section .flex-contact {
+    flex-wrap: wrap;
+  }
+  .contact-section .img-contact {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+  }
+  .contact-section form * {
+    text-align: center;
+  }
 }
 /* End Contact  */
 /* Start Footer  */
