@@ -263,3 +263,9 @@ let footer = document.querySelector('footer')
 let year = new Date()
 footer.innerHTML = `<p>CopyRights © ${year.getFullYear()}</p>`
 //-------------------------------------------
+// Add Toggle Menu 
+let menuBar = document.querySelector('.icon-menu')
+let linksList = document.querySelector('.header-list')
+menuBar.addEventListener('click', (eo) => {
+  linksList.classList.toggle('open-list')
+})
