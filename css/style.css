@@ -347,13 +347,23 @@ header .header-list li a:hover {
     margin-bottom: 6px;
   }
   header .header-list.open-list {
-    background-color: black;
+    background-color: rgb(36, 33, 33);
     display: block;
     color: black;
     position: absolute;
-    top: 10px;
-    right: 0px;
+    top: 25px;
+    right: -58px;
     border-radius: 5px;
+    box-shadow: rgb(0 0 0 / 39%) 16px 8px 16px;
+  }
+  header .header-list.open-list::after {
+    content: '';
+    border-style: solid;
+    border-width: 15px;
+    border-color: transparent transparent rgb(36, 33, 33) transparent;
+    position: absolute;
+    right: 40%;
+    top: -30px;
   }
   header .header-list.open-list li {
     padding: 20px;
