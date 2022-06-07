@@ -462,7 +462,7 @@ header .header-list li a:hover {
   display: flex;
 }
 .about-section .info-box .info-parag {
-  max-width: 600px;
+  max-width: 100%;
   font-size: 20px;
   line-height: 2;
   font-weight: 600;
@@ -514,21 +514,27 @@ header .header-list li a:hover {
   opacity: 1;
 }
 /* Start Responsive About Us  */
+@media (min-width: 1199px) {
+  .about-section .info-box .info-parag {
+    line-height: 3;
+  }
+}
 @media (max-width: 991px) {
   .about-section .info-box {
-    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .about-section .image-width::after {
+    width: 100%;
+    height: 350px;
   }
   .about-section .image-about img {
-    width: 600px;
-    height: 298px;
+    width: 100%;
+    height: 350px;
   }
 }
 @media (max-width: 650px) {
   .about-section .image-about img {
     width: 100%;
-  }
-  .about-section .info-box {
-    overflow: hidden;
   }
   .about-section .info-box .info-parag {
     padding: 20px;
@@ -862,9 +868,15 @@ header .header-list li a:hover {
   .contact-section .flex-contact {
     flex-wrap: wrap;
   }
+  .contact-section form {
+    margin: -40px auto;
+  }
   .contact-section .img-contact {
     width: 100%;
     border-radius: 10px 10px 0 0;
+  }
+  .contact-section .img-contact i {
+    margin: 0;
   }
   .contact-section form * {
     text-align: center;
