@@ -268,4 +268,15 @@ let menuBar = document.querySelector('.icon-menu')
 let linksList = document.querySelector('.header-list')
 menuBar.addEventListener('click', (eo) => {
   linksList.classList.toggle('open-list')
+  menuBar.classList.toggle('style-close')
+})
+//-------------------------------------------
+// Make toggle Menu Responsive 
+let menuLinks = document.querySelectorAll('header li a')
+
+menuLinks.forEach(item => {
+  item.addEventListener('click', (eo) => {
+    eo.target.parentElement.parentElement.classList.remove('open-list')
+  menuBar.classList.remove('style-close')
+  })
 })

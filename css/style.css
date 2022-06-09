@@ -273,13 +273,10 @@ a {
 /* End Settings Box */
 /* Start Header  */
 header {
-  position: absolute;
+  position: absolute; 
   left: 0;
-  right: 0;
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+  padding: 30px 0;
 }
 header .container {
   display: flex;
@@ -310,7 +307,6 @@ header .header-list {
       transform: translateY(0) scale(1) rotate(0);
     }
   }
-
 }
 header .header-list li a {
   color: white;
@@ -320,7 +316,6 @@ header .header-list li a {
 header .header-list li a:hover {
   color: var(--main-color);
 }
-
 /* Start Responsive Header  */
 @media(max-width: 991px) {
   header .header-list {
@@ -339,6 +334,19 @@ header .header-list li a:hover {
     position: absolute;
     right: 0;
     top: -15px;
+    z-index: 99999;
+  }
+  header .menu-hover .icon-menu.style-close span:first-child {
+    transform: rotateZ(50deg) translate(12px, 9px);
+    transition: .5s;
+  }
+  header .menu-hover .icon-menu.style-close span:nth-child(2) {
+    opacity: 0;
+    transition: .5s;
+  }
+  header .menu-hover .icon-menu.style-close span:last-child {
+    transform: rotateZ(-50deg) translate(1px, 0);
+    transition: .5s;
   }
   header .menu-hover span {
     display: block;
@@ -347,30 +355,28 @@ header .header-list li a:hover {
     margin-bottom: 6px;
   }
   header .header-list.open-list {
-    background-color: rgb(36, 33, 33);
+    background-color: rgba(36, 33, 33);
     display: block;
     color: black;
-    position: absolute;
-    top: 25px;
-    right: -58px;
-    border-radius: 5px;
-    box-shadow: rgb(0 0 0 / 39%) 16px 8px 16px;
-  }
-  header .header-list.open-list::after {
-    content: '';
-    border-style: solid;
-    border-width: 15px;
-    border-color: transparent transparent rgb(36, 33, 33) transparent;
-    position: absolute;
-    right: 40%;
-    top: -30px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    width: 100%;
+    z-index: 9999;
   }
   header .header-list.open-list li {
     padding: 20px;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   header .header-list.open-list li a {
     color: white;
+    position: relative;
+    top: 200px;
+    font-size: 40px;
   }
   header .header-list.open-list li a:hover {
     color: var(--main-color);
@@ -526,12 +532,10 @@ header .header-list li a:hover {
   .about-section .image-width::after {
     width: 100%;
     height: 298px;
-
   }
   .about-section .image-about img {
     width: 100%;
     height: 298px;
-
   }
 }
 @media (max-width: 650px) {
