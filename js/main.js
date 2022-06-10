@@ -177,26 +177,42 @@ window.addEventListener('scroll', (eo) => {
 // Features Section
 let mainTitleFeatures = document.querySelector('#features .main-title')
 window.addEventListener('scroll', (eo) => {
-  if (window.scrollY >= 2100) {
+  let windowheight = window.innerHeight;
+  let revealTop = mainTitleFeatures.getBoundingClientRect().top;
+  let revealPoint = 150;
+
+  if (revealTop < (windowheight - revealPoint)) {
     mainTitleFeatures.classList.add('animation-title', 'name-delay')
   }
 })
 let middleFeat = document.querySelector('.middle-feat')
 window.addEventListener('scroll', (eo) => {
-  if (window.scrollY >= 2100) {
+  let windowheight = window.innerHeight;
+  let revealTop = middleFeat.getBoundingClientRect().top;
+  let revealPoint = 150;
+
+  if (revealTop < (windowheight - revealPoint)) {
     middleFeat.style.boxShadow = "1px 1px 20px 3px #00000020"
   }
 })
 // Testimonials Section 
 let mainTitletesti = document.querySelector('#testimonials .main-title')
 window.addEventListener('scroll', (eo) => {
-  if (window.scrollY >= 3000) {
+  let windowheight = window.innerHeight;
+  let revealTop = mainTitletesti.getBoundingClientRect().top;
+  let revealPoint = 150;
+
+  if (revealTop < (windowheight - revealPoint)) {
     mainTitletesti.classList.add('animation-title', 'name-delay')
   }
 })
 let testBox = document.querySelectorAll('.test-box')
 window.addEventListener('scroll', (eo) => {
-  if (window.scrollY >= 3000) {
+  let windowheight = window.innerHeight;
+  let revealTop = mainTitletesti.getBoundingClientRect().top;
+  let revealPoint = 150;
+
+  if (revealTop < (windowheight - revealPoint)) {
     testBox.forEach(item => {
       item.classList.add('show-testi-box')
     });
@@ -205,7 +221,11 @@ window.addEventListener('scroll', (eo) => {
 // Contact Us Section 
 let mainTitleContact = document.querySelector('#contact .main-title')
 window.addEventListener('scroll', (eo) => {
-  if (window.scrollY >= 3900) {
+  let windowheight = window.innerHeight;
+  let revealTop = mainTitleContact.getBoundingClientRect().top;
+  let revealPoint = 150;
+
+  if (revealTop < (windowheight - revealPoint)) {
     mainTitleContact.classList.add('animation-title', 'name-delay')
   }
 })
