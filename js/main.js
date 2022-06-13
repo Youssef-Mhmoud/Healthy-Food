@@ -149,19 +149,31 @@ scrollToTop.onclick = eo => {
     behavior: "smooth"
   })
 }
+// Function Manage If Condition
+function manageIf(name, number) {
+  let windowheight = window.innerHeight;
+  let revealTop = name.getBoundingClientRect().top;
+  let revealPoint = number;
+
+  return revealTop < (windowheight - revealPoint)
+}
+// Function Manage Animation
+function manageAnimation(name1,num) {
+  if (manageIf(name1, num)) {
+    name1.classList.add('animation-title', 'name-delay')
+  }
+}
 // 1- Animation About Section One Title
 let mainTitleAbout = document.querySelector('#about .main-title')
 window.addEventListener('scroll', (eo) => {
-  if (window.scrollY >= 550) {
-    mainTitleAbout.classList.add('animation-title', 'name-delay')
-  }
+  manageAnimation(mainTitleAbout, 350)
 })
 // 2- Animation About Section Two Img
 let imgBox = document.querySelector('.image-about')
 let paragraph = document.querySelector('.image-about p')
 
 window.addEventListener('scroll', (eo) => {
-  if (window.scrollY >= 610) {
+  if (manageIf(paragraph, 150)) {
     imgBox.classList.add('image-width')
     paragraph.classList.add('op')
     paragraph.style.color = 'var(--main-color)'
@@ -170,49 +182,29 @@ window.addEventListener('scroll', (eo) => {
 // Gallery Section
 let mainTitleGa = document.querySelector('#gallery .main-title')
 window.addEventListener('scroll', (eo) => {
-  if (window.scrollY >= 1300) {
-    mainTitleGa.classList.add('animation-title', 'name-delay')
-  }
+  manageAnimation(mainTitleGa, 350)
 })
 // Features Section
 let mainTitleFeatures = document.querySelector('#features .main-title')
 window.addEventListener('scroll', (eo) => {
-  let windowheight = window.innerHeight;
-  let revealTop = mainTitleFeatures.getBoundingClientRect().top;
-  let revealPoint = 150;
-
-  if (revealTop < (windowheight - revealPoint)) {
-    mainTitleFeatures.classList.add('animation-title', 'name-delay')
-  }
+  manageAnimation(mainTitleFeatures, 350)
 })
+
 let middleFeat = document.querySelector('.middle-feat')
 window.addEventListener('scroll', (eo) => {
-  let windowheight = window.innerHeight;
-  let revealTop = middleFeat.getBoundingClientRect().top;
-  let revealPoint = 150;
-
-  if (revealTop < (windowheight - revealPoint)) {
+  if (manageIf(middleFeat, 150)) {
     middleFeat.style.boxShadow = "1px 1px 20px 3px #00000020"
   }
 })
 // Testimonials Section 
 let mainTitletesti = document.querySelector('#testimonials .main-title')
 window.addEventListener('scroll', (eo) => {
-  let windowheight = window.innerHeight;
-  let revealTop = mainTitletesti.getBoundingClientRect().top;
-  let revealPoint = 150;
-
-  if (revealTop < (windowheight - revealPoint)) {
-    mainTitletesti.classList.add('animation-title', 'name-delay')
-  }
+  manageAnimation(mainTitletesti, 350)
 })
+
 let testBox = document.querySelectorAll('.test-box')
 window.addEventListener('scroll', (eo) => {
-  let windowheight = window.innerHeight;
-  let revealTop = mainTitletesti.getBoundingClientRect().top;
-  let revealPoint = 150;
-
-  if (revealTop < (windowheight - revealPoint)) {
+  if (manageIf(testBox[0], 150)) {
     testBox.forEach(item => {
       item.classList.add('show-testi-box')
     });
@@ -221,13 +213,7 @@ window.addEventListener('scroll', (eo) => {
 // Contact Us Section 
 let mainTitleContact = document.querySelector('#contact .main-title')
 window.addEventListener('scroll', (eo) => {
-  let windowheight = window.innerHeight;
-  let revealTop = mainTitleContact.getBoundingClientRect().top;
-  let revealPoint = 150;
-
-  if (revealTop < (windowheight - revealPoint)) {
-    mainTitleContact.classList.add('animation-title', 'name-delay')
-  }
+  manageAnimation(mainTitleContact, 350)
 })
 //-------------------------------------------
 // Start Gallery Img PopUp
