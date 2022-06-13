@@ -163,57 +163,49 @@ function manageAnimation(name1,num) {
     name1.classList.add('animation-title', 'name-delay')
   }
 }
-// 1- Animation About Section One Title
+// 1- Animation Title
 let mainTitleAbout = document.querySelector('#about .main-title')
-window.addEventListener('scroll', (eo) => {
-  manageAnimation(mainTitleAbout, 350)
-})
+let mainTitleGa = document.querySelector('#gallery .main-title')
+let mainTitleFeatures = document.querySelector('#features .main-title')
+let mainTitletesti = document.querySelector('#testimonials .main-title')
+let mainTitleContact = document.querySelector('#contact .main-title')
+
 // 2- Animation About Section Two Img
 let imgBox = document.querySelector('.image-about')
 let paragraph = document.querySelector('.image-about p')
 
+// 3- Animation Features Section
+let middleFeat = document.querySelector('.middle-feat')
+
+// 4- Animation Testimonials Section
+let testBox = document.querySelectorAll('.test-box')
+
 window.addEventListener('scroll', (eo) => {
+// 1- Animation Title
+  manageAnimation(mainTitleAbout, 350)
+  manageAnimation(mainTitleGa, 350)
+  manageAnimation(mainTitleFeatures, 350)
+  manageAnimation(mainTitletesti, 350)
+  manageAnimation(mainTitleContact, 350)
+
+// 2- Animation About Section Two Img
   if (manageIf(paragraph, 150)) {
     imgBox.classList.add('image-width')
     paragraph.classList.add('op')
     paragraph.style.color = 'var(--main-color)'
   }
-})
-// Gallery Section
-let mainTitleGa = document.querySelector('#gallery .main-title')
-window.addEventListener('scroll', (eo) => {
-  manageAnimation(mainTitleGa, 350)
-})
-// Features Section
-let mainTitleFeatures = document.querySelector('#features .main-title')
-window.addEventListener('scroll', (eo) => {
-  manageAnimation(mainTitleFeatures, 350)
-})
 
-let middleFeat = document.querySelector('.middle-feat')
-window.addEventListener('scroll', (eo) => {
+// 3- Animation Features Section
   if (manageIf(middleFeat, 150)) {
     middleFeat.style.boxShadow = "1px 1px 20px 3px #00000020"
   }
-})
-// Testimonials Section 
-let mainTitletesti = document.querySelector('#testimonials .main-title')
-window.addEventListener('scroll', (eo) => {
-  manageAnimation(mainTitletesti, 350)
-})
 
-let testBox = document.querySelectorAll('.test-box')
-window.addEventListener('scroll', (eo) => {
+// 4- Animation Testimonials Section
   if (manageIf(testBox[0], 150)) {
     testBox.forEach(item => {
       item.classList.add('show-testi-box')
     });
   }
-})
-// Contact Us Section 
-let mainTitleContact = document.querySelector('#contact .main-title')
-window.addEventListener('scroll', (eo) => {
-  manageAnimation(mainTitleContact, 350)
 })
 //-------------------------------------------
 // Start Gallery Img PopUp
