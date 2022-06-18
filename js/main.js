@@ -196,9 +196,9 @@ window.addEventListener('scroll', (eo) => {
   }
 
 // 3- Animation Features Section
-  if (manageIf(middleFeat, 150)) {
+  if (manageIf(middleFeat, 550)) {
     middleFeat.style.boxShadow = "1px 1px 20px 6px #00000020"
-    middleFeat.style.transform = "translateY(-10px)"
+    middleFeat.style.transform = "translateY(5px) scale(0.9)"
   }
 
 // 4- Animation Testimonials Section
