@@ -175,6 +175,7 @@ a {
   border-radius: 0 5px 5px 0;
   text-align: center;
   cursor: pointer;
+  box-shadow: 2px 1px 17px 2px #00000050;
 }
 .setting-box .fa-gear {
   width: 30px;
