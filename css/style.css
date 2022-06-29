@@ -387,7 +387,7 @@ header .header-list li a:hover {
 /* Start Landing  */
 .landing {
   min-height: 100vh;
-  background-image: url(/images/1.jpg);
+  background-image: url(images/1.jpg);
   background-size: cover;
   position: relative;
   z-index: -1;
