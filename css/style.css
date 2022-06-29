@@ -744,7 +744,7 @@ header .header-list li a:hover {
 }
 .testimonials .container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
   gap: 40px;
 }
 .testimonials .test-box {
