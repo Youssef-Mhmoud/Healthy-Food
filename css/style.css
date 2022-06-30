@@ -337,6 +337,11 @@ header .header-list li a:hover {
     top: -15px;
     z-index: 99999;
   }
+  header .menu-hover .icon-menu.style-close {
+    position: fixed;
+    top: 35px;
+    right: 35px;
+  }
   header .menu-hover .icon-menu.style-close span:first-child {
     transform: rotateZ(50deg) translate(12px, 9px);
     transition: .5s;
