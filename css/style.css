@@ -376,7 +376,7 @@ header .header-list li a:hover {
   header .header-list.open-list li a {
     color: white;
     position: relative;
-    top: 200px;
+    top: 100px;
     font-size: 40px;
   }
   header .header-list.open-list li a:hover {
@@ -636,8 +636,8 @@ header .header-list li a:hover {
 }
 @media (max-width: 580px) {
   .popup-box img {
-    width: 300px;
-    height: 200px;
+    width: 250px;
+    height: 150px;
   }
 }
 /* End Gallery  */
