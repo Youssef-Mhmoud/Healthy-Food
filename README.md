@@ -1,4 +1,7 @@
 # Healthy-Food
 ## Landing Page
-### Html, Css And Javascript
 ![1 - Copy](https://user-images.githubusercontent.com/100860879/204902947-feca8f60-ee9a-4d36-b2e4-3a6ea7799d68.jpg)
+### Tools and Technology:
+- Html
+- Css
+- Javascript
