@@ -26,6 +26,11 @@
   margin: 0;
   padding: 0;
 }
+*:focus {
+  box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.3);
+  transition: box-shadow 0.3s;
+  outline: none;
+}
 html {
   scroll-behavior: smooth;
 }
@@ -280,15 +285,15 @@ a {
   font-weight: bold;
   margin-top: 15px;
   cursor: pointer;
-  transition: .3s;
+  transition: 0.3s;
 }
 .op-reset button:hover {
-  opacity: .8;
+  opacity: 0.8;
 }
 /* End Settings Box */
 /* Start Header  */
 header {
-  position: absolute; 
+  position: absolute;
   left: 0;
   width: 100%;
   padding: 30px 0;
@@ -332,10 +337,10 @@ header .header-list li a:hover {
   color: var(--main-color);
 }
 /* Start Responsive Header  */
-@media(max-width: 991px) {
+@media (max-width: 991px) {
   header .header-list {
     transition: 0.3s;
-    background-color: rgba(36, 33, 33, .95);
+    background-color: rgba(36, 33, 33, 0.95);
     display: block;
     color: black;
     position: fixed;
@@ -408,7 +413,7 @@ header .header-list li a:hover {
     margin-bottom: 6px;
   }
   header .header-list.open-list {
-    background-color: rgba(36, 33, 33, .95);
+    background-color: rgba(36, 33, 33, 0.95);
     display: block;
     color: black;
     position: fixed;
@@ -440,7 +445,7 @@ header .header-list li a:hover {
 /* Start Landing  */
 .landing {
   min-height: 100vh;
-  background: url('../images/1.jpg');
+  background: url("../images/1.jpg");
   background-size: cover;
   position: relative;
   z-index: -1;
@@ -748,7 +753,7 @@ header .header-list li a:hover {
   width: 250px;
   height: 250px;
   margin: -15px auto 180px;
-  transition: .7s;
+  transition: 0.7s;
   /* box-shadow: 1px 1px 20px 3px #00000020; */
 }
 .features-section .middle-feat i {
@@ -780,10 +785,10 @@ header .header-list li a:hover {
 }
 /* Strat Responsive Features   */
 @media (max-width: 767px) {
-    .features-section .container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+  .features-section .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
   .features-section .middle-feat {
     margin-bottom: 0;
@@ -809,8 +814,8 @@ header .header-list li a:hover {
   border-radius: 6px;
   color: white;
   box-shadow: 0 2px 4px rgb(0, 0, 0, 0.07);
-  transition: .4s;
-  transition-delay: calc(.5s * var(--delay));
+  transition: 0.4s;
+  transition-delay: calc(0.5s * var(--delay));
 }
 .testimonials .show-testi-box {
   top: 20px;
@@ -894,10 +899,15 @@ header .header-list li a:hover {
   caret-color: var(--main-color);
   color: black;
 }
-.contact-section form input:focus::placeholder ,
+.contact-section form input:focus::placeholder,
 .contact-section form textarea:focus::placeholder {
   opacity: 0;
-  transition: .3s;
+  transition: 0.3s;
+}
+.contact-section form input:focus,
+.contact-section form textarea:focus,
+.contact-section form .sub-btn:focus {
+  box-shadow: 0 0 0 8px rgb(201 201 201 / 50%);
 }
 .contact-section form textarea {
   height: 150px;
@@ -917,9 +927,10 @@ header .header-list li a:hover {
   font-weight: 600;
   border-radius: 5px;
   cursor: pointer;
-  transition: .3s;
+  transition: 0.3s;
 }
-.contact-section form .sub-btn:hover {
+.contact-section form .sub-btn:hover,
+.contact-section form .sub-btn:focus {
   background-color: var(--main-color);
   color: white;
 }
