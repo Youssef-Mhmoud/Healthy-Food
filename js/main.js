@@ -7,19 +7,19 @@ btnGear.addEventListener("click", (eo) => {
   btnGear.classList.toggle("spin");
 });
 // Reset Button
-document.querySelector('.reset-op').addEventListener('click', eo => {
-  localStorage.clear()
-  window.location.reload()
-})
+document.querySelector(".reset-op").addEventListener("click", (eo) => {
+  localStorage.clear();
+  window.location.reload();
+});
 //-------------------------------------------
 // Make Function Handle With Active Class
 function handleActive(e) {
-      // Remove Active From All Chlidern
-      e.target.parentElement.querySelectorAll(".active").forEach(item => {
-        item.classList.remove("active");
-      });
-      // Add Active Class
-      e.target.classList.add("active");
+  // Remove Active From All Chlidern
+  e.target.parentElement.querySelectorAll(".active").forEach((item) => {
+    item.classList.remove("active");
+  });
+  // Add Active Class
+  e.target.classList.add("active");
 }
 // -------------------------------------------
 // Start Switch Colors
@@ -50,8 +50,8 @@ colorsList.forEach((item) => {
     localStorage.setItem("colorLocal", eo.target.dataset.color);
 
     // Remove Active From All Chlidern
-    handleActive(eo)
-});
+    handleActive(eo);
+  });
 });
 
 // -------------------------------------------
@@ -89,7 +89,7 @@ bgBtn.forEach((item) => {
   item.addEventListener("click", (eo) => {
     localStorage.setItem("activeBg", eo.target.dataset.bg);
     // Remove Active From All Chlidern
-    handleActive(eo)
+    handleActive(eo);
     // Add Active Class
     eo.target.classList.add("active");
     // Remove Auto Background Selected
@@ -134,148 +134,151 @@ selectImage();
 // this.addEventListener('scroll', (eo) => {
 //   console.log(this.scrollY);
 // })
-// Add Scroll To Top 
-let scrollToTop = document.querySelector('.scroll')
-window.addEventListener('scroll', (eo) => {
+// Add Scroll To Top
+let scrollToTop = document.querySelector(".scroll");
+window.addEventListener("scroll", (eo) => {
   if (window.scrollY >= 500) {
-    scrollToTop.classList.add('show')
+    scrollToTop.classList.add("show");
   } else {
-    scrollToTop.classList.remove('show')
+    scrollToTop.classList.remove("show");
   }
-})
-scrollToTop.onclick = eo => {
+});
+scrollToTop.onclick = (eo) => {
   window.scrollTo({
     top: 0,
-    behavior: "smooth"
-  })
-}
+    behavior: "smooth",
+  });
+};
 // Function Manage If Condition
 function manageIf(name, number) {
   let windowheight = window.innerHeight;
   let revealTop = name.getBoundingClientRect().top;
   let revealPoint = number;
 
-  return revealTop < (windowheight - revealPoint)
+  return revealTop < windowheight - revealPoint;
 }
 // Function Manage Animation
-function manageAnimation(name1,num) {
+function manageAnimation(name1, num) {
   if (manageIf(name1, num)) {
-    name1.classList.add('animation-title', 'name-delay')
+    name1.classList.add("animation-title", "name-delay");
   }
 }
 // 1- Animation Title
-let mainTitleAbout = document.querySelector('#about .main-title')
-let mainTitleGa = document.querySelector('#gallery .main-title')
-let mainTitleFeatures = document.querySelector('#features .main-title')
-let mainTitletesti = document.querySelector('#testimonials .main-title')
-let mainTitleContact = document.querySelector('#contact .main-title')
+let mainTitleAbout = document.querySelector("#about .main-title");
+let mainTitleGa = document.querySelector("#gallery .main-title");
+let mainTitleFeatures = document.querySelector("#features .main-title");
+let mainTitletesti = document.querySelector("#testimonials .main-title");
+let mainTitleContact = document.querySelector("#contact .main-title");
 
 // 2- Animation About Section Two Img
-let imgBox = document.querySelector('.image-about')
-let paragraph = document.querySelector('.image-about p')
+let imgBox = document.querySelector(".image-about");
+let paragraph = document.querySelector(".image-about p");
 
 // 3- Animation Features Section
-let middleFeat = document.querySelector('.middle-feat')
+let middleFeat = document.querySelector(".middle-feat");
 
 // 4- Animation Testimonials Section
-let testBox = document.querySelectorAll('.test-box')
+let testBox = document.querySelectorAll(".test-box");
 
-window.addEventListener('scroll', (eo) => {
-// 1- Animation Title
-  manageAnimation(mainTitleAbout, 350)
-  manageAnimation(mainTitleGa, 350)
-  manageAnimation(mainTitleFeatures, 350)
-  manageAnimation(mainTitletesti, 350)
-  manageAnimation(mainTitleContact, 350)
+window.addEventListener("scroll", (eo) => {
+  // 1- Animation Title
+  manageAnimation(mainTitleAbout, 350);
+  manageAnimation(mainTitleGa, 350);
+  manageAnimation(mainTitleFeatures, 350);
+  manageAnimation(mainTitletesti, 350);
+  manageAnimation(mainTitleContact, 350);
 
-// 2- Animation About Section Two Img
+  // 2- Animation About Section Two Img
   if (manageIf(paragraph, 150)) {
-    imgBox.classList.add('image-width')
-    paragraph.classList.add('op')
-    paragraph.style.color = 'var(--main-color)'
+    imgBox.classList.add("image-width");
+    paragraph.classList.add("op");
+    paragraph.style.color = "var(--main-color)";
   }
 
-// 3- Animation Features Section
+  // 3- Animation Features Section
   if (manageIf(middleFeat, 400)) {
-    middleFeat.style.boxShadow = "1px 1px 20px 6px #00000020"
-    middleFeat.style.transform = "translateY(5px) scale(0.9)"
+    middleFeat.style.boxShadow = "1px 1px 20px 6px #00000020";
+    middleFeat.style.transform = "translateY(5px) scale(0.9)";
   }
 
-// 4- Animation Testimonials Section
+  // 4- Animation Testimonials Section
   if (manageIf(testBox[0], 150)) {
-    testBox.forEach(item => {
-      item.classList.add('show-testi-box')
+    testBox.forEach((item) => {
+      item.classList.add("show-testi-box");
     });
   }
-})
+});
 //-------------------------------------------
 // Start Gallery Img PopUp
-let imagePop = document.querySelectorAll('.gallery-box img')
+let imagePop = document.querySelectorAll(".gallery-box img");
 
-imagePop.forEach(item => {
-  item.addEventListener('click', (eo) => {
+imagePop.forEach((item) => {
+  item.addEventListener("click", (eo) => {
     // Create Overlay Element
-    let overlay = document.createElement('div')
-    overlay.setAttribute('class', 'popup')
-    document.body.appendChild(overlay)
-    
-    // Create Popup Box
-    let popBox = document.createElement('div')
-    popBox.className = "popup-box"
+    let overlay = document.createElement("div");
+    overlay.setAttribute("class", "popup");
+    document.body.appendChild(overlay);
 
-    // Create Image 
-    let popImage = document.createElement('img')
-    popImage.src = item.src
+    // Create Popup Box
+    let popBox = document.createElement("div");
+    popBox.className = "popup-box";
+
+    // Create Image
+    let popImage = document.createElement("img");
+    popImage.src = item.src;
     // Add Image To PopUp Box
-    popBox.appendChild(popImage)
+    popBox.appendChild(popImage);
 
     // Add PopBox To Body
-    document.body.appendChild(popBox)
+    document.body.appendChild(popBox);
 
     if (item.alt !== null) {
-      let imgHeading = document.createElement('h3')
-      let imgText = document.createTextNode(item.alt)
-      imgHeading.appendChild(imgText)
-      // Append The Heading To Popup Box 
-      popBox.prepend(imgHeading)
+      let imgHeading = document.createElement("h3");
+      let imgText = document.createTextNode(item.alt);
+      imgHeading.appendChild(imgText);
+      // Append The Heading To Popup Box
+      popBox.prepend(imgHeading);
 
       // Create Close Span
-      let closeBtn = document.createElement('i')
-      closeBtn.className = 'fa-solid fa-xmark'
-      popBox.prepend(closeBtn)
+      let closeBtn = document.createElement("i");
+      closeBtn.className = "fa-solid fa-xmark";
+      popBox.prepend(closeBtn);
     }
-  })
-})
+  });
+});
 // Close The Popup
-document.addEventListener('click', (eo) => {
-  if (eo.target.className == 'fa-solid fa-xmark') {
+document.addEventListener("click", (eo) => {
+  if (eo.target.className == "fa-solid fa-xmark") {
     // Remove Popup
-    eo.target.parentElement.remove()
+    eo.target.parentElement.remove();
 
     // Remove Overlay
-    document.querySelector('.popup').remove()
+    document.querySelector(".popup").remove();
+  } else if (eo.target.className == "popup") {
+    document.querySelector(".popup").remove();
+    document.querySelector(".popup-box").remove();
   }
-})
+});
 //-------------------------------------------
 // Add Paragraph To Footer
-let footer = document.querySelector('footer')
-let year = new Date()
-footer.innerHTML = `<p>CopyRights © ${year.getFullYear()}</p>`
+let footer = document.querySelector("footer");
+let year = new Date();
+footer.innerHTML = `<p>CopyRights © ${year.getFullYear()}</p>`;
 //-------------------------------------------
-// Add Toggle Menu 
-let menuBar = document.querySelector('.icon-menu')
-let linksList = document.querySelector('.header-list')
-menuBar.addEventListener('click', (eo) => {
-  linksList.classList.toggle('open-list')
-  menuBar.classList.toggle('style-close')
-})
+// Add Toggle Menu
+let menuBar = document.querySelector(".icon-menu");
+let linksList = document.querySelector(".header-list");
+menuBar.addEventListener("click", (eo) => {
+  linksList.classList.toggle("open-list");
+  menuBar.classList.toggle("style-close");
+});
 //-------------------------------------------
-// Make toggle Menu Responsive 
-let menuLinks = document.querySelectorAll('header li a')
+// Make toggle Menu Responsive
+let menuLinks = document.querySelectorAll("header li a");
 
-menuLinks.forEach(item => {
-  item.addEventListener('click', (eo) => {
-    eo.target.parentElement.parentElement.classList.remove('open-list')
-  menuBar.classList.remove('style-close')
-  })
-})
+menuLinks.forEach((item) => {
+  item.addEventListener("click", (eo) => {
+    eo.target.parentElement.parentElement.classList.remove("open-list");
+    menuBar.classList.remove("style-close");
+  });
+});
