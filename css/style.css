@@ -701,10 +701,11 @@ header .header-list li a:hover {
   align-items: center;
   justify-content: center;
 
-  transition: 0.5s;
+  transition: 0.3s;
 }
 .popup-box i:hover {
-  transform: rotate(180deg);
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 /* Start Responsive PopUp  */
 @media (max-width: 680px) {
