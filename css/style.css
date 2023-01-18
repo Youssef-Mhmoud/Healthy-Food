@@ -622,7 +622,7 @@ header .header-list li a:hover {
   gap: 15px;
 }
 .gallery-section .gallery-box .img-box {
-  padding: 3px;
+  padding: 3px 3px 0px 3px;
   border: 1px solid #eee;
   border-radius: 5px;
   
