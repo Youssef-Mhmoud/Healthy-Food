@@ -625,7 +625,7 @@ header .header-list li a:hover {
   padding: 3px 3px 0px 3px;
   border: 1px solid #eee;
   border-radius: 5px;
-  
+
   overflow: hidden;
 }
 .gallery-section .gallery-box img {
@@ -634,16 +634,17 @@ header .header-list li a:hover {
   border-radius: 5px;
   cursor: pointer;
 
-  transition: all .3s;
+  transition: all 0.3s;
 }
 .gallery-section .gallery-box img:hover {
   transform: scale(1.1);
-
 }
 /* Popup Image  */
 .popup {
   position: fixed;
   background-color: rgb(0 0 0 / 70%);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
   left: 0;
   top: 0;
   width: 100%;
@@ -655,12 +656,13 @@ header .header-list li a:hover {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%) scale(1);
-  z-index: 100000;
   padding: 20px;
   background-color: #fff;
   border: 1px solid #eee;
   border-radius: 5px;
   animation: popup 0.4s;
+
+  z-index: 100000;
 }
 @keyframes popup {
   0%,
@@ -699,7 +701,7 @@ header .header-list li a:hover {
   align-items: center;
   justify-content: center;
 
-  transition: 0.5s; 
+  transition: 0.5s;
 }
 .popup-box i:hover {
   transform: rotate(180deg);
