@@ -615,15 +615,30 @@ header .header-list li a:hover {
 }
 .gallery-section .gallery-box {
   text-align: center;
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.gallery-section .gallery-box .img-box {
+  padding: 3px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  
+  overflow: hidden;
 }
 .gallery-section .gallery-box img {
   width: 300px;
   height: 200px;
-  padding: 3px;
   border-radius: 5px;
-  border: 1px solid #eee;
-  margin: 5px;
   cursor: pointer;
+
+  transition: all .3s;
+}
+.gallery-section .gallery-box img:hover {
+  transform: scale(1.1);
+
 }
 /* Popup Image  */
 .popup {
