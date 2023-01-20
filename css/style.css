@@ -651,6 +651,7 @@ header .header-list li a:hover {
   height: 100%;
   z-index: 10000;
 }
+
 .popup-box {
   position: fixed;
   left: 50%;
@@ -661,7 +662,6 @@ header .header-list li a:hover {
   border: 1px solid #eee;
   border-radius: 5px;
   animation: popup 0.4s;
-
   z-index: 100000;
 }
 @keyframes popup {
