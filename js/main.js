@@ -116,7 +116,7 @@ img4 = `url(images/4.jpg)`;
 let arrImages = [img1, img2, img3, img4];
 
 function selectImage() {
-  if (bgSelectAuto === true) {
+  if (bgSelectAuto) {
     interval = setInterval(() => {
       if (index < arrImages.length) {
         landingPage.style.backgroundImage = arrImages[index];
@@ -137,18 +137,23 @@ selectImage();
 // Add Scroll To Top
 let scrollToTop = document.querySelector(".scroll");
 window.addEventListener("scroll", (eo) => {
-  if (window.scrollY >= 500) {
-    scrollToTop.classList.add("show");
-  } else {
-    scrollToTop.classList.remove("show");
-  }
+  window.scrollY >= 500
+    ? scrollToTop.classList.add("show")
+    : scrollToTop.classList.remove("show");
+
+  //---- Old code
+  // if (window.scrollY >= 500) {
+  //   scrollToTop.classList.add("show");
+  // } else {
+  //   scrollToTop.classList.remove("show");
+  // }
 });
 scrollToTop.onclick = (eo) => {
   window.scrollTo({
     top: 0,
     behavior: "smooth",
   });
-};
+}; /////////////////////////////////////////////////////////
 // Function Manage If Condition
 function manageIf(name, number) {
   let windowheight = window.innerHeight;
@@ -208,6 +213,7 @@ window.addEventListener("scroll", (eo) => {
     });
   }
 });
+///////////////////////////////////////////////////////////////////////////////
 //-------------------------------------------
 // Start Gallery Img PopUp
 let imagePop = document.querySelectorAll(".gallery-box img");
